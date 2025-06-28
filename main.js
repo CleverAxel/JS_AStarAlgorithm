@@ -14,8 +14,10 @@ export const STOP_WATCH = document.querySelector("#stopwatch span");
 document.querySelector("button").addEventListener("click", () => {
     GRID.aStar.reset();
     const now = performance.now();
-    GRID.aStar.scan();
-    STOP_WATCH.innerHTML = performance.now() - now;
+    if (GRID.aStar.scan())
+        STOP_WATCH.innerHTML = performance.now() - now;
+    else
+        STOP_WATCH.innerHTML = "?";
     // console.log(performance.now() - now);
 });
 
