@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAST AF BOI</title>
+    <style>
+        *, *::after, *::before {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            width: 100%;
+            height: 100vh;
+        }
+
+        canvas {
+            display: block;
+            border: 1px solid black;
+            margin: 0 auto;
+        }
+
+        #stopwatch {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="fps_counter"></h1>
+    <div>
+        <div><label>ACTION SUR GRILLE :</label></div>
+        <select id="grid_mode">
+        </select>
+    </div>
+
+    <div style="margin: 10px 0;"></div>
+
+    <div>
+        <div>
+            <label>Calculer le chemin dynamiquement</label>
+            <input autocomplete="off" type="checkbox" id="constant_path_calculation">
+        </div>
+    </div>
+    <div>
+        <div>
+            <label>Autoriser les diagonals</label>
+            <input autocomplete="off" type="checkbox" id="allow_diagonal_path">
+        </div>
+    </div>
+    <div>
+        <div>
+            <label>Afficher grille</label>
+            <input autocomplete="off" type="checkbox" id="display_grid">
+        </div>
+    </div>
+
+    <div style="margin: 10px 0;"></div>
+
+    <button>Trouver le chemin le plus court</button>
+    <div id="stopwatch">
+        A mis : <span>?</span>ms pour trouver le chemin
+    </div>
+    <canvas></canvas>
+</body>
+<script src="./main.js" type="module"></script>
+</html>
